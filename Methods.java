@@ -127,7 +127,7 @@ public class Methods {
         return Math.PI * Math.pow(R, 2);
     }
 
-    public static Map<Double, Double> tang(double a, double b, double h) {                    //10                       //10
+    public static Map<Double, Double> tang(double a, double b, double h) {                    //10                       
         Map<Double, Double> results = new HashMap<Double, Double>();
         double function;
         for (double i = a; i <= b; i += h) {
