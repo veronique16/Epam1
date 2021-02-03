@@ -1,7 +1,6 @@
 package com.company;
 
 import com.company.epam.tasks01.Methods;
-
 import java.util.Map;
 
 public class Main {
@@ -17,7 +16,7 @@ public class Main {
                 " года - " + Methods.amountOfDays(month, year));
 
         double square = 24;
-        System.out.println("Площадь квадрата, вписанного в данную окружность - " + Methods.innerSquareArea(square) +
+        System.out.println("Площадь квадрата, вписанного в данную окружность, - " + Methods.innerSquareArea(square) +
                 ". Площадь вписанного квадрата в " + Methods.differenceOfAreas(square)
                 + " раза меньше площади заданного квадрата.");
 
