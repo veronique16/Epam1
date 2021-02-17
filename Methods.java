@@ -4,7 +4,6 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Methods {
-
     public static int findLastDigitSquare(int number) {                                   //1
         String numberAsString = "" + number;
         String lastDigit = numberAsString.substring(numberAsString.length() - 1);
@@ -42,16 +41,15 @@ public class Methods {
             throw new Exception("Площадь не может быть отрицательной или равной 0");
         }
         double radius = Math.sqrt(outerSquareArea) / 2;
-        //return 2 * radius / Math.sqrt(2);
         return 2 * Math.pow(radius, 2);
     }
 
-    public static double differenceOfAreas(double outerSquareArea) throws Exception {
+    public static int differenceOfAreas(double outerSquareArea) throws Exception {
         if (outerSquareArea <= 0) {
             throw new Exception("Площадь не может быть отрицательной или равной 0");
         }
         double innerSquareArea = innerSquareArea(outerSquareArea);
-        return outerSquareArea / innerSquareArea;
+        return (int) Math.round(outerSquareArea / innerSquareArea);
     }
 
     public static boolean ifThereAre2Evens(int A, int B, int C, int D) {                    //4
@@ -87,9 +85,9 @@ public class Methods {
         if (second < 0) {
             throw new Exception("Количество секунд не может быть отрицательным.");
         }
-        int hours = second / 3600;
-        int minutes = second / 60;
-        int seconds = second - minutes * 60;
+        int hours=second/3600;
+        int minutes=(second-hours*3600)/60;
+        int seconds=second-hours*3600-minutes*60;
         return new int[]{hours, minutes, seconds};
     }
 
@@ -97,9 +95,9 @@ public class Methods {
         double distanceFromA = Math.sqrt(Math.pow(x1, 2) + Math.pow(y1, 2));
         double distanceFromB = Math.sqrt(Math.pow(x2, 2) + Math.pow(y2, 2));
         if (distanceFromA > distanceFromB) {
-            return "точка A";
-        } else if (distanceFromA < distanceFromB) {
             return "точка B";
+        } else if (distanceFromA < distanceFromB) {
+            return "точка А";
         } else {
             return "точки расположены одинаково близко к началу координат.";
         }
@@ -127,7 +125,7 @@ public class Methods {
         return Math.PI * Math.pow(R, 2);
     }
 
-    public static Map<Double, Double> tang(double a, double b, double h) {                    //10                       
+    public static Map<Double, Double> tang(double a, double b, double h) {                    //10                      
         Map<Double, Double> results = new HashMap<Double, Double>();
         double function;
         for (double i = a; i <= b; i += h) {
